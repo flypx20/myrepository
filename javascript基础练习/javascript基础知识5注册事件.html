@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>javascript基础知识5注册事件</title>
+	<script>
+		//load事件只有在文档加载完后才会触发
+		//通常需要等待load事件发生后才开始执行Java生日平台代码
+        window.onload = function(){
+        	var images = document.getElementsByTagName('img');//找到文档中所有的img标签
+        	//遍历images，给每个恩节点的“click”事件添加事件处理程序：点击图片的时候将图片隐藏
+        	for(var i = 0;i<images.length;i++){
+        		var image = images[i];
+        		if(image.addEventListener) //注册事件处理的另一种方法
+        			image.addEventListener("click",hide,false);
+        		else
+        			image.attachEvent("onclick",hide);
+        	}
+        	//这里是上面注册的事件处理函数
+        	function hide(event){
+        		event.target.style.visibility = "hidden";
+        	}
+        }
+	</script>
+</head>
+<body>
+	<img src="../images/1.gif" alt="">
+	<img src="../images/2.jpg" alt="">
+	<img src="../images/3.gif" alt="">
+	<img src="../images/2.jpg" alt="">
+</body>
+</html>

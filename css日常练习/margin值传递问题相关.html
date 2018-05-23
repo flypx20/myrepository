@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>margin值传递问题相关</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		.father{
+			width: 220px;
+			height: 220px;
+			background: red;
+			border: 1px solid black;
+			
+			padding: 10px 50px 50px 50px;
+			
+
+			box-shadow: 2px 3px 4px 5px  black ;
+		}
+		.son{
+			width: 110px;
+			height: 110px;
+
+			background: blue;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>javascript基础知识4DOM操作</title>
+	<script type="text/javascript">
+		 function debug(msg) {
+			//通过查看HTML元素id属性来查找文档的调试部分
+			var log = document.getElementById("debuglog");
+
+			//如果这个元素不存在则创建一个
+			if(!log){
+				log = document.createElement("div");//创建一个新的div元素
+				log.id = "debuglog";//给这个元素的HTML id赋值
+				log.innerHTML = "<h1>Debug Log</h1>";//给div添加内容
+				document.body.appendChild(log);//将其添加到文档的末尾
+
+			}
+			//将消息包装在<pre>中，并添加至log中
+			var pre = document.createElement("pre");//创建pre标签
+			var text = document.createTextNode(msg);//将msg包装在一个文本节点当中
+			console.log(msg);
+			pre.appendChild(text);
+			log.appendChild(pre);
+		};
+
+		function hide(e,reflow){
+			if(reflow){
+				e.style.display = "none";
+			}else{
+				e.style.visibility = "hidden";
+			}
+		}
+		function highlight(e){
+			if(!e.className) e.className = "hilite";
+			else e.className +="hilite";
+		}
+
+	</script>
+</head>
+<body>
+	Hello
+	<button onclick="hide(this,true); debug('hide button 1');">Hide1</button>
+	<button onclick="hide(this); debug('hide button 2');highlight(this);">Hide2</button>
+	World
+</body>
+</html>

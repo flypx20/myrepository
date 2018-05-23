@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>javascript日期和时间</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+  var then = new Date(2018,5,22);//2018年5月22日
+  console.log(then);
+  var later = new Date(2018,5,22,17,10,20);//2018年5月22号，17点10分20秒；
+  console.log(later);
+  var now = Date();
+  var elapsed = now - later;//日期减法，计算时间间隔的毫秒数。
+  console.log(elapsed);
+  console.log(later.getFullYear());//=>2018;
+  console.log(later.getMonth());//=>5//月份从零开始计算
+  console.log(later.getDate());//=>22,从1开始计算的天数
+  console.log(later.getDay());//=>2;得到的是星期几，0代表星期日，5代表星期一
+  console.log(later.getHours());//17点
+  console.log(later.getMinutes());
+</script>
+</html>

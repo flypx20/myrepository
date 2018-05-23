@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>javascript基础知识复习</title>
+	<script>
+		var x;
+		x =0;//现在变量x的值为0
+		console.log(x);
+		x =1;//数字类型的值；
+		x = 0.01;//整数和实数共用一种数字类型
+		x = "hello world";//由双引号的文本构成的字符串
+		x = 'javasript';//单引号内的文本同样构成字符串
+		x = true;//布尔值
+		x = false;//另一个布尔值
+		x = null;//null是一个特殊的值，意思是“空”
+		x = undefined;//undefined和null非常相似
+		console.log(x);
+		//对象是名/值对的集合，或字符串到值映射的集合
+		var book = {
+			topic:"JavaScipt",
+			fat:true   //属性fat的值是true
+		};
+		//通过"."或"[]"来访问对象属性
+		console.log(book.topic);
+		console.log(book["fat"]);
+		console.log(book["fat"]==book.fat);
+		//console.log(book.fat==book[fat]);(错误的。。。。。)
+		book.author = "Flanagan";//通过赋值创造一个新属性
+		book.contents = {};//{}是一个空对象，它没有属性
+		console.log(book["author"]);
+		console.log(book.contents);
+		//JavaScript中的数组
+		var primes = [2,5,3,7]//此数组有4个值，长度为4
+		console.log(primes[0]);//打印出primes中的第一个值
+		console.log(primes["length"]==primes.length);
+		console.log(primes.length-1);//结果是3
+		console.log(primes[primes.length-1]);//数组中的最后一个元素
+		console.log(primes.length-1==primes[3]);//fasle
+		primes[4] = 9;//通过赋值来添加新元素
+		console.log(primes[4]);//9
+		primes[4] = 11//通过赋值来改变已有得元素、
+		console.log(primes[4]);//11
+		var empty = [];//空数组，他有0个元素
+		console.log(empty);
+		console.log(empty.length);
+		//数组和对象中都可以包含另一个数组或对象
+		var points = [
+						{x:0,
+						 y:0
+						},
+						{
+						 x:1,
+						 y:1
+						}
+		]              //具有两个元素的数组，每个元素都是一个对象
+		console.log(points);
+		console.log(points.length);//2
+		var data = {
+			trial1:[
+						[1,2],
+						[3,4]
+			],
+			trial2:[
+						[2,3],
+						[5,4]
+			]
+		}   //一个包含两个属性的对象，每一个属性都是数组，数组的元素也是数组
+		console.log(data);//undefined
+		console.log(data.length);//2
+		console.log(data.trial1);
+		console.log(data["trial1"].length)//2
+		console.log(3+2);//加法运算
+		console.log(3-2);//1 减法运算
+		console.log(3*2);//6 乘法运算
+		console.log(points[1].x-points[0].x)//1
+		console.log("3"+"2");//“32”字符串的拼接
+		var count = 0;
+
+		//console.log(count);
+		//console.log(count++);//自增1==》1
+		//console.log(count--);//自减1==>0
+		//console.log(count+=2);//自增2==》2
+		//console.log((count = count+2)==(count+=2));//==>true
+		//console.log(count*=3);//==>6自乘3
+		//console.log((count*=3)==(count=count*3));//==>true
+		console.log(count);
+		var count = 0;
+		count++;
+		count--;
+		count+=2;
+		count*=3;
+		console.log(count);
+		var x =2,y =3;
+		console.log(x==y);//false;
+		console.log(x!=y);//true;
+		console.log(x<y);//true
+		console.log(x<=y);//true
+		console.log(x>y);//false
+		console.log(x>=y);//false
+		console.log("two"=="three");//两个字符串不相等
+		console.log("two">"three");//-==>true,"tw"在字母表中的索引大于"th"
+		console.log(false==(x>y));//==>true
+		//逻辑运算符是对布尔值的合并或求反
+		console.log((x==2)&&(y==3));//==>true;&&表示"与"
+		console.log((x>3) || (y<3));//=>false;||表示"或"
+		console.log((x<3) || (y<3));//=>true;
+		console.log(!(x==y));//=>true;!表示求反
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

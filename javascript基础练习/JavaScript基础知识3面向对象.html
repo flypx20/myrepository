@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript基础知识3面向对象</title>
+	<script>
+		function Point(x,y){
+			this.x = x;
+			this.y = y;
+			console.log(this);
+		}
+		var p = new Point(1,1);//使用new来创建一个实例
+		Point.prototype.r = function(){
+			return Math.sqrt(
+						this.x*this.x+this.y*this.y
+				);
+		};
+		//Point的实例对象p（以及所有的Point实例对象）继承了方法r（）
+		p.r();
+		console.log(p.r());//=>1.414
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

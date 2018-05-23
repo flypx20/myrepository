@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>汇率计算</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+  //本币中心
+  (function(w){
+    function self(name){
+      this.oInput = null;//后续操作引用oinput
+      this.init(name);//初始化操作
+      this.foreigners = [];//保存外币的数组
+    }
+    self.prototype = {
+        constructor:self,
+        init : function(name){
+          var oP = document.createElement('p');
+          this.oInput = document.createElement('input');
+          oP.innerHTML = name;
+          oP.appendChild(this.oInput);
+          document.body.appendChild(oP);
+        },
+        register : function(foreign){
+          this.foreigners.push(foreign);
+        },
+        publish : function(){
+            this.oInput.oninput = function(){
+                for(var i =0;i<this.foreigners.length;i++){
+                    this.foreigners[i].listen(this.oInput.value);
+                }
+            }.bind(this);
+        }
+     };
+    w.self = self;
+    })(window);
+
+  //外币中心
+  (function(w){
+    function foreign(name,rate,local){
+      this.oInput = null;
+      this.rate = rate;
+      local.register(this);
+      this.init(name);
+    }
+    foreign.prototype = {
+         constructor:foreign,
+        init : function(name){
+                  var oP = document.createElement('p');
+                  this.oInput = document.createElement('input');
+                  oP.innerHTML = name;
+                  oP.appendChild(this.oInput);
+                  document.body.appendChild(oP);
+       },
+       listen : function(val){
+          this.oInput.value = val / this.rate;
+       }
+    };
+    w.foreign = foreign;
+  })(window);
+  var cny = new self('软妹币');
+  var dollar = new foreign('dollar',6,cny);
+  cny.publish();
+</script>
+</html>
