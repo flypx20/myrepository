@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>正则的几个使用方法</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+  var text = "testing: 1,2,3";
+  var reg = /^testing/ ;//匹配以testing开头的字符串
+  console.log(reg.test(text));//=>true;
+  var reg1 = /\d+/g;//匹配一个或多个数字的实例
+  console.log(reg1.test(text));//=>true
+  console.log(text.search(reg1));//=>9;首次匹配成功的位置
+  console.log(text.match(reg1));//所有匹配组成的数组
+  console.log(text.replace(reg1,"*"));//替换数组中的数字
+  console.log(text.split(/\D+/));//用非数子字符截取字符串
+
+</script>
+</html>
