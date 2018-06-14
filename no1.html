@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>只拿一等奖</title>
+  <style type="text/css">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      background: #1b1009;
+      color: #000000;
+    }
+    .machine{
+      width: 640px;
+      height: 1039px;
+      margin: 0px auto;
+      overflow: hidden;
+      position: relative;
+    }
+    .game{
+      background: url(images/game_ndj.png) no-repeat;
+      width: 553px;
+      height: 767px;
+      left: 47px;
+      top: 74px;
+      position: absolute;
+      z-index: 3;
+    }
+    .output{
+      width: 136px;
+      height: 138px;
+      position: absolute;
+      left: 248px;
+      top: 721px;
+      z-index: 1;
+      background:url(images/mendong.png) no-repeat;
+    }
+    .go{
+      width: 134px;
+      height: 50px;
+      position: absolute;
+      left: 210px;
+      bottom: 225px;
+      background: url(images/an_go.png) no-repeat;
+      font-size: 18px;
+      color: #fff;
+      line-height: 20px;
+      text-align: center;
+      padding-top: 90px;
+      cursor: pointer;
+    }
+    .boll-scroll{
+      width: 500px;
+      height: 447px;
+      position: absolute;
+      left: 68px;
+      top: 80px;
+      z-index: 1;
+      border-radius: 240px 240px 0px 0px;
+      overflow: hidden;
+    }
+    .machine .boll-scroll span{
+      width: 115px;
+      height: 115px;
+      position: absolute;
+      display: block;
+      animation-play-state: paused;
+    }
+    .boll-fir{
+      left: 55px;
+      top: 272px;
+      background: url(images/canpin_3.png) no-repeat;
+      animation: around1 1.5s linear infinite;
+    }
+    .boll-sec{
+      left: 3px;
+      top: 200px;
+      background: url(images/canpin_4.png) no-repeat;
+      animation: around2 1.5s linear infinite;
+    }
+    .boll-thi{
+      left: 10px;
+      top: 348px;
+      background: url(images/canpin_1.png) no-repeat;
+      animation: around3 1.5s linear infinite;
+    }
+    .boll-for{
+      left: 130px;
+      top: 227px;
+      background: url(images/canpin_2.png) no-repeat;
+      animation: around4 1.5s linear infinite;
+    }
+    .boll-fiv{
+      left: 174px;
+      top: 305px;
+      background: url(images/canpin_4.png) no-repeat;
+       animation: around5 1.5s linear infinite;
+    }
+    .boll-six{
+      left: 100px;
+      top: 348px;
+      background: url(images/canpin_3.png) no-repeat;
+      animation: around6 1.5s linear infinite;
+    }
+    .boll-sev{
+      left: 216px;
+      top: 229px;
+      background: url(images/canpin_1.png) no-repeat;
+      animation: around7 1.5s linear infinite;
+    }
+    .boll-eig{
+      left: 265px;
+      top: 306px;
+      background: url(images/canpin_2.png) no-repeat;
+      animation: around8 1.5s linear infinite;
+    }
+    .boll-nine{
+      left: 413px;
+      top: 290px;
+      background: url(images/canpin_3.png) no-repeat;
+      animation: around9 1.5s linear infinite;
+    }
+    .boll-ten{
+      left: 348px;
+      top: 348px;
+      background: url(images/canpin_1.png) no-repeat;
+      animation: around10 1.5s linear infinite;
+    }
+    @keyframes around1 {
+      0%{ transform:translate(0px,0px)  }
+      20%{transform:translate(300px,230px) }
+      40%{transform:translate(200px,-100px) }
+      60%{transform:translate(50px,230px) }
+      80%{transform:translate(300px,-50px) }
+      100%{transform:translate(200px,240px) }
+}
+@keyframes around2 {
+      0%{ transform:translate(0px,0px)  }
+      10%{transform:translate(300px,-120px) }
+      30%{transform:translate(250px,130px) }
+      50%{transform:translate(-50px,-120px) }
+      80%{transform:translate(0px,140px) }
+      100%{transform:translate(300px,-180px) }
+}
+@keyframes around3 {
+      0%{ transform:translate(0px,0px)  }
+      25%{transform:translate(70px,-290px) }
+      50%{transform:translate(320px,0px) }
+      80%{transform:translate(-20px,-290px) }
+      100%{transform:translate(290px,0px) }
+
+}
+@keyframes around4 {
+      0%{ transform:translate(0px,0px)  }
+      12%{transform:translate(50px,250px) }
+      30%{transform:translate(-150px,-30px) }
+      60%{transform:translate(-140px,260px) }
+      80%{transform:translate(-10px,-30px) }
+      100%{transform:translate(-20px,260px) }
+
+}
+@keyframes around5 {
+      0%{ transform:translate(0px,0px)  }
+      22%{transform:translate(-50px,-170px) }
+      46%{transform:translate(150px,145px) }
+      80%{transform:translate(200px,-115px) }
+      100%{transform:translate(-100px,145px) }
+}
+@keyframes around6 {
+      0%{ transform:translate(0px,0px)  }
+      15%{ transform:translate(260px,40px)  }
+      30%{ transform:translate(-80px,-260px)  }
+      45%{ transform:translate(-40px,40px)  }
+      60%{ transform:translate(100px,-290px)  }
+      75%{ transform:translate(-80px,-280px)  }
+      100%{ transform:translate(10px,40px)  }
+
+}
+  @keyframes around7 {
+      0%{ transform:translate(0px,0px)  }
+      20%{ transform:translate(-60px,-170px)  }
+      40%{ transform:translate(90px,160px)  }
+      60%{ transform:translate(-220px,-140px)  }
+      80%{ transform:translate(160px,-60px)  }
+      100%{ transform:translate(-100px,-100px)  }
+
+}
+@keyframes around8 {
+      0%{ transform:translate(0px,0px)  }
+      20%{ transform:translate(140px,-120px)  }
+      40%{ transform:translate(-140px,40px)  }
+      60%{ transform:translate(-180px,-240px)  }
+      80%{ transform:translate(100px,50px)  }
+      100%{ transform:translate(-180px,-220px)  }
+}
+@keyframes around9 {
+      0%{ transform:translate(0px,0px)  }
+      30%{ transform:translate(-300px,-180px)  }
+      60%{ transform:translate(-350px,120px)  }
+      80%{ transform:translate(-100px,-200px)  }
+      100%{ transform:translate(-200px,100px)  }
+}
+@keyframes around10 {
+      0%{ transform:translate(0px,0px)  }
+      15%{ transform:translate(-300px,-270px)  }
+      30%{ transform:translate(20px,-220px)  }
+      50%{ transform:translate(-350px,10px)  }
+      75%{ transform:translate(0px,-150px)  }
+      100%{ transform:translate(-300px,-300px)  }
+}
+
+.gift{
+    width: 450px;
+    height: 286px;
+    border-radius: 10px;
+    background: #fff;
+    top: 140px;
+    right: 540px;
+    margin-left: 143px;
+    position: absolute;
+    z-index: 4;
+     display:none;
+     line-height: 100px;
+}
+.gift h2{
+    font-size: 36px;
+    color: #ff1a4b;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.cansole{
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  top: -56px;
+  left: 412px;
+}
+  </style>
+  <script type="text/javascript" src="js/jquery1.8.3.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $('.go').click(function(){
+            $.getJSON('http://127.0.0.1:3000')
+            .done(function(data){
+               $('.no-1').text('获得'+data.name+'!');
+               console.log($('.no-1'));
+              $('span').each(function(){
+                this.style.animationPlayState = 'running';
+              });
+
+              setTimeout(function(){
+
+                $('.gift')[0].style.display='block';
+                 $('span').each(function(){
+                this.style.animationPlayState = 'paused';
+              });
+              },1000);
+              $('.cansole').click(function(){
+                  $('.gift')[0].style.display='none';
+              });
+          });
+      });
+    });
+
+  </script>
+</head>
+<body>
+  <div class="machine">
+    <div class="boll-scroll">
+      <span class="boll-fir"></span>
+      <span class="boll-sec"></span>
+      <span class="boll-thi"></span>
+      <span class="boll-for"></span>
+      <span class="boll-fiv"></span>
+      <span class="boll-six"></span>
+      <span class="boll-sev"></span>
+      <span class="boll-eig"></span>
+      <span class="boll-nine"></span>
+      <span class="boll-ten"></span>
+    </div>
+    <div class="game">
+      <div class="go"></div>
+    </div>
+    <div class="output"></div>
+  </div>
+  <div class="gift">
+    <div class="cansole"><img src="images/close.png"></div>
+    <h2>恭喜你！</h2>
+    <h2 class="no-1"></h2>
+  </div>
+</body>
+</html>
