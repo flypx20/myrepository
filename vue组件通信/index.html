@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue实例组件间互相通信
+    </title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <father></father>
+    </div>
+</body>
+<script>
+  var vm =  new Vue({
+        el:'#app',
+        components:{father},
+        data:{
+            message:'hello.我是第一个vue程序'
+        }
+    });
+    console.log(vm);
+</script>
+</html>
